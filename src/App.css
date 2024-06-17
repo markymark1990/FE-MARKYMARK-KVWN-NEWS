@@ -5,38 +5,68 @@
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.header {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 2rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.articles-section {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.article-list {
+  list-style: none;
+  padding: 0;
+}
+
+.article-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.article-list li:last-child {
+  border-bottom: none;
+}
+
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1024px) {
+  #root {
+    padding: 1rem;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .header, .articles-section {
+    padding: 0.5rem;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@media (max-width: 768px) {
+  #root {
+    padding: 0.5rem;
+  }
+  
+  .header, .articles-section {
+    padding: 0.5rem;
+  }
+  
+  .article-list li {
+    padding: 0.25rem 0;
   }
 }
 
-.card {
-  padding: 2em;
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .articles-section h2 {
+    font-size: 1.25rem;
+  }
 }
 
-.read-the-docs {
-  color: #888;
-}
+
+
+
