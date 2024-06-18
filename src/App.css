@@ -1,3 +1,8 @@
+
+/* Styling */
+
+
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -5,10 +10,13 @@
   text-align: center;
 }
 
+
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
 }
+
+
 
 .header {
   background-color: #52ae74; 
@@ -18,6 +26,8 @@ body {
   margin-bottom: 2rem;
 }
 
+
+
 .articles-section {
   background-color: #f0f0f0; 
   border: 1px solid #ccc;
@@ -25,40 +35,25 @@ body {
   margin-bottom: 2rem;
 }
 
+
+
 .article-list {
   list-style: none;
   padding: 0;
 }
 
 .article-list li {
-  color: #000 !important; /* Black color for links */
-  text-decoration: none !important; /* Remove underline to start with */
-  font-family: 'Roboto', sans-serif; /* Apply the chosen font */
-  font-size: 1rem; /* Example font size adjustment */
+  color: #000 !important; 
+  text-decoration: none !important; 
+  font-family: 'Roboto', sans-serif; 
+  font-size: 1rem; 
 }
 
 .article-list li:visited {
-  color: #800080 !important; /* Purple color for visited links */
+  color: #800080 !important; 
 }
 
-/* .article-list li {
-  padding: 0.5rem 0;
-  border-bottom: 1px solid #eee;
-} */
 
-/* .article-list li:last-child {
-  border-bottom: none;
-} */
-
-/* .article-item {
-  border: 1px solid #ccc;
-  margin: 10px 0;
-  padding: 10px;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */
 
 .article-item {
   border: 1px solid #ddd;
@@ -84,6 +79,17 @@ body {
   transition: transform 0.2s ease-in-out;
 }
 
+
+
+.article-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+
+
 .comments-section {
   margin-top: 2rem;
 }
@@ -91,6 +97,8 @@ body {
 .comments-section h3 {
   cursor: pointer;
 }
+
+
 
 .comment {
   background-color: #f9f9f9;
@@ -129,7 +137,12 @@ body {
   margin-top: 0.5rem;
 }
 
-/* Media Queries for Responsive Design */
+
+
+/* Media Queries */
+
+
+
 @media (max-width: 1024px) {
   #root {
     padding: 1rem;
@@ -142,7 +155,7 @@ body {
 
 @media (max-width: 768px) {
   #root {
-    padding: 0.5rem;
+    padding: 1rem;
   }
   
   .header, .articles-section {
@@ -152,15 +165,33 @@ body {
   .article-list li {
     padding: 0.25rem 0;
   }
+  
+  .article-item {
+    padding: 10px; 
+    margin: 10px 0;
+  }
+  
+  .article-item h3 {
+    font-size: 1rem; 
+  }
+  
+  .article-item p {
+    font-size: 0.875rem; 
+  }
 }
+
 
 @media (max-width: 480px) {
   .header h1 {
-    font-size: 1.5rem;
+    font-size: 1.25rem; 
   }
   
   .articles-section h2 {
-    font-size: 1.25rem;
+    font-size: 1rem; 
+  }
+  
+  .article-item h3 {
+    font-size: 0.875rem; 
   }
 }
 
