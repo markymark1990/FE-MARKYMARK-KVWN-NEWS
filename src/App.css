@@ -84,6 +84,50 @@ body {
   transition: transform 0.2s ease-in-out;
 }
 
+.comments-section {
+  margin-top: 2rem;
+}
+
+.comments-section h3 {
+  cursor: pointer;
+}
+
+.comment {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, background-color 0.2s;
+}
+
+.comment:hover {
+  transform: translateY(-2px);
+  background-color: #f1f1f1;
+}
+
+.comment p {
+  margin: 0.5rem 0;
+}
+
+.comment strong {
+  font-size: 1rem;
+  color: #52ae74;
+}
+
+.comment-date {
+  font-size: 0.875rem;
+  color: #777;
+  margin-top: 0.25rem;
+}
+
+.comment-body {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+  margin-top: 0.5rem;
+}
 
 /* Media Queries for Responsive Design */
 @media (max-width: 1024px) {
