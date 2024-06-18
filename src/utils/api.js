@@ -5,5 +5,6 @@ const api = axios.create({
 })
 
 export const getArticles = () => api.get('/articles');
+export const getArticleById = (id) => api.get(`/articles/${id}`);
 
 export default api;
