@@ -4,8 +4,10 @@ import { Link } from "react-router-dom";
 
 const ArticleTitles = () => {
 
+
     const [articles, setArticles] = useState ([])
     const [isLoading, setIsLoading] = useState (true)
+
 
     useEffect(() => {
         getArticles().then((response) => {
@@ -13,6 +15,7 @@ const ArticleTitles = () => {
             setIsLoading(false)
         })
     }, [])
+
 
     return (
         <div>
@@ -22,7 +25,9 @@ const ArticleTitles = () => {
         <ul className="article-list"> 
             {articles.map((article) => (
                 <li key={article.article_id} className="article-item">
-                    <Link to={`/article/${article.article_id}`}>{article.title}</Link>
+                    <Link to={`/article/${article.article_id}`}>
+                    <span className="list-text-class">{article.title}</span>
+                    </Link>
                 </li>
             ))}
         </ul>

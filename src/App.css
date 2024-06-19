@@ -10,6 +10,12 @@
   text-align: center;
 }
 
+.page-container {
+  background-color: rgb(29, 67, 154);
+  min-height: 100vh;
+  padding: 20px; 
+}
+
 
 body {
   font-family: Arial, sans-serif;
@@ -19,7 +25,7 @@ body {
 
 
 .header {
-  background-color: #52ae74; 
+  background-color: #eab135; 
   color: #333; 
   border: 1px solid #ccc;
   padding: 1rem;
@@ -29,10 +35,33 @@ body {
 
 
 .articles-section {
-  background-color: #f0f0f0; 
+  background-color: #eab135; 
   border: 1px solid #ccc;
   padding: 1rem;
   margin-bottom: 2rem;
+}
+
+
+
+.articles-header {
+  display: flex;
+  align-items: center;  
+  justify-content: center;  
+  position: relative;  
+}
+
+
+
+.sub-heading {
+  font-family: 'Arial', sans-serif; 
+  font-size: 40px; 
+  font-weight: 900; 
+  color: white; 
+  background-color: #c92929; 
+  padding: 1rem;
+  display: inline-block;
+  margin: 0;  
+  text-align: center;  
 }
 
 
@@ -43,6 +72,7 @@ body {
 }
 
 .article-list li {
+  background-color: rgb(29, 67, 154); 
   color: #000 !important; 
   text-decoration: none !important; 
   font-family: 'Roboto', sans-serif; 
@@ -51,6 +81,16 @@ body {
 
 .article-list li:visited {
   color: #800080 !important; 
+}
+
+
+
+.list-text-class {
+  background-color: rgb(29, 67, 154); 
+  color: white !important; 
+  text-decoration: none !important; 
+  font-family: 'Roboto', sans-serif; 
+  font-size: 1rem; 
 }
 
 
@@ -139,6 +179,16 @@ body {
 
 
 
+.ron {
+  width: 200px; 
+  height: auto;
+  position: absolute;
+  right: 0;  
+ 
+}
+
+
+
 /* Media Queries */
 
 
@@ -151,6 +201,19 @@ body {
   .header, .articles-section {
     padding: 0.5rem;
   }
+
+  .logo {
+    width: 120px; 
+  }
+
+  .sub-heading {
+    font-size: 35px; 
+    padding: 0.8rem;
+  }
+
+  .ron {
+    width: 150px;  
+}
 }
 
 @media (max-width: 768px) {
@@ -178,6 +241,23 @@ body {
   .article-item p {
     font-size: 0.875rem; 
   }
+
+  .logo {
+    width: 120px; 
+  }
+
+  .sub-heading {
+    font-size: 20px; 
+    padding: 0.6rem;
+  }
+
+  .list-text-class {
+    font-size: 0.8rem;
+  }
+
+  .ron {
+    width: 100px;  
+}
 }
 
 
@@ -193,6 +273,24 @@ body {
   .article-item h3 {
     font-size: 0.875rem; 
   }
+
+  .logo {
+    width: 120px;
+  }
+
+  .sub-heading {
+    font-size: 20px; 
+    padding: 0.5rem;
+  }
+
+  .list-text-class {
+    font-size: 0.6rem;
+  }
+
+  .ron {
+    width: 75px; 
+}
+
 }
 
 
