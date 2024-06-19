@@ -5,10 +5,12 @@ import CommentsByArticle from "./CommentsByArticle.jsx";
 
 const ArticleInfo = () => {
 
+
     const { articleId } = useParams()
     const [article, setArticle] = useState({})
     const [isLoading, setIsLoading] = useState(true)
     const [voted, setVoted] = useState(false)
+
 
     useEffect(() => {
         getArticleById(articleId).then((response) => {
@@ -30,10 +32,10 @@ const ArticleInfo = () => {
         voteOnArticle(articleId, voteType)
             .then((response) => {
                 setArticle(response.data.article);
-                console.log("Vote successful:", response.data);
             })
     }
 
+    
     return (
         <div>
             {isLoading ? (

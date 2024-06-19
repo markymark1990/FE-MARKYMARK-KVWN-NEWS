@@ -1,6 +1,7 @@
 import { getCommentsById } from "../utils/api.js";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import AddComment from "./AddComment.jsx";
 
 
 const CommentsByArticle = () => {
@@ -34,6 +35,10 @@ const CommentsByArticle = () => {
         setShowComments(!showComments)
     }
 
+    const handleCommentAdded = (newComment) => {
+        setComments((prevComments) => [newComment, ...prevComments])
+    }
+
 
     return (
         <div className="comments-section">
@@ -44,8 +49,9 @@ const CommentsByArticle = () => {
             {isLoading && <p>Loading comments...</p>}
             {!isLoading && showComments && (
                 
-
-                comments.length > 0 ? (
+            <>
+                <AddComment onCommentAdded={handleCommentAdded}/>
+                {comments.length > 0 ? (
                     comments.map((comment) => (
                         <div key={comment.comment_id} className="comment">
                             <p><strong>{comment.author}</strong> ({new Date(comment.created_at).toLocaleDateString()})</p>
@@ -54,8 +60,8 @@ const CommentsByArticle = () => {
                     ))
                 ) : (
                     <p>No comments yet</p>
-                
-            )
+                 )}
+            </>
             )}
         </div>
     )

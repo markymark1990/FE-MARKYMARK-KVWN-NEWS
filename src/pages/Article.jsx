@@ -4,7 +4,7 @@ import ArticleInfo from "../components/ArticleInfo.jsx";
 const Article =() => {
 
     return (
-        <div>
+        <div className="page-container">
             <Header />
             <div className="articles-section">
                 <ArticleInfo />
