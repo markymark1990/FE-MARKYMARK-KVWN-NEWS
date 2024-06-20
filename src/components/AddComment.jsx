@@ -1,11 +1,13 @@
 import { useParams } from "react-router-dom";
 import { addComment } from "../utils/api";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { UserContext } from "../UserContext";
 
 const AddComment = ({onCommentAdded}) => {
 
-    
+
     const { articleId } = useParams()
+    const { user } = useContext(UserContext)
     const [comment, setComment] = useState('')
     const [isSubmitting, setIsSubmitting] = useState(false)
 
@@ -16,7 +18,7 @@ const handleSubmit = (event) => {
 
     addComment(articleId, {
         body: comment,
-        username: 'tickle122'
+        username: user.username,
     })
     .then((response) => {
         setComment('')

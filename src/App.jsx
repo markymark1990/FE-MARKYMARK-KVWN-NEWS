@@ -1,14 +1,19 @@
 import './App.css'
 import Home from './pages/Home.jsx'
 import Article from './pages/Article.jsx';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import Login from './pages/Login.jsx';
+import ProtectedRoute from './components/ProtectedRoute.jsx';
 
 function App() {
+
   return(
     <div>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/article/:articleId" element={<Article />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+        <Route path="/article/:articleId" element={<ProtectedRoute><Article /></ProtectedRoute>} />
+        <Route path="*" element={<Navigate to="/login" />} />
       </Routes>
     </div>
   )
