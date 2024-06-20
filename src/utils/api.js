@@ -6,7 +6,9 @@ const api = axios.create({
 
 export const getUsers = () => api.get("/users");
 
-export const getArticles = () => api.get("/articles");
+export const getArticles = (params) => api.get("/articles", { params });
+
+export const getTopics = () => api.get("/topics")
 
 export const getArticleById = (id) => api.get(`/articles/${id}`);
 

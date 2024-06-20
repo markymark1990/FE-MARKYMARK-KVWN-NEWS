@@ -1,10 +1,13 @@
-import Header from "../components/Header.jsx";
-import ArticleTitles from "../components/ArticleTitles.jsx";
+import { useParams } from "react-router-dom";
+import ArticleTitles from "../components/ArticleTitles";
+import Header from "../components/Header";
 import ronBurgundy from "../images/ron2.png";
-import UserStatus from "../components/UserStatus.jsx";
-import NavigationBar from "../components/NavigationBar.jsx";
+import NavigationBar from "../components/NavigationBar";
+import UserStatus from "../components/UserStatus";
 
-const Home = () => {
+const TopicArticles = () => {
+  const { topicSlug } = useParams();
+
   return (
     <div>
       <div className="page-container">
@@ -21,7 +24,7 @@ const Home = () => {
         </div>
 
         <div className="articles-section">
-          <ArticleTitles />
+          <ArticleTitles topicSlug={topicSlug} />
         </div>
       </div>
       <div>
@@ -31,4 +34,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default TopicArticles;

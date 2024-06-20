@@ -2,7 +2,7 @@ import { getArticles } from "../utils/api.js";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const ArticleTitles = () => {
+const ArticleTitles = ({topicSlug}) => {
 
 
     const [articles, setArticles] = useState ([])
@@ -10,11 +10,12 @@ const ArticleTitles = () => {
 
 
     useEffect(() => {
-        getArticles().then((response) => {
+        getArticles(topicSlug ? { topic: topicSlug } : {})
+        .then((response) => {
             setArticles(response.data.articles)
             setIsLoading(false)
         })
-    }, [])
+    }, [topicSlug])
 
 
     return (
