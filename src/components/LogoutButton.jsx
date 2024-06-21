@@ -4,7 +4,7 @@ import { UserContext } from "../UserContext.jsx";
 const LogoutButton = () => {
   const { setUser } = useContext(UserContext);
 
-  const handleLogout = () => {
+    const handleLogout = () => {
     setUser(null);
   };
 
