@@ -293,6 +293,40 @@ body {
 }
 
 
+
+.sort-controls {
+  display: flex;
+  justify-content: flex-start; 
+  width: 200px;
+  height: auto;
+  position: absolute;
+  left: 0;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.sort-controls select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #fff;
+  margin-right: 10px;
+  text-decoration: none;
+  color: rgb(29, 67, 154);
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.sort-controls select:focus {
+  outline: none;
+  border-color: #1d439a; 
+}
+
+
 /* Media Queries */
 
 @media (max-width: 1024px) {
@@ -352,6 +386,14 @@ body {
 
   .topics-navigation a {
     font-size: 0.9rem; 
+  }
+
+  .sort-controls {
+    width: 150px;
+  }
+
+  .sort-controls select {
+    font-size: 0.6rem;
   }
 }
 
@@ -437,6 +479,14 @@ body {
   .topics-navigation a {
     font-size: 0.8rem; 
   }
+
+  .sort-controls {
+    width: 160px;
+  }
+
+  .sort-controls select {
+    font-size: 0.5rem;
+  }
 }
 
 
@@ -506,6 +556,15 @@ body {
 
   .topics-navigation a {
     font-size: 0.7rem; 
+  }
+
+  .sort-controls {
+    width: 100px;
+    flex-wrap: wrap;
+  }
+
+  .sort-controls select {
+    font-size: 0.4rem;
   }
 
 }
