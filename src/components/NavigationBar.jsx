@@ -3,32 +3,45 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getTopics } from "../utils/api";
 
-
 const NavigationBar = () => {
+  const [topics, setTopics] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-const [topics,setTopics] = useState([])
-
-useEffect(() => {
+  useEffect(() => {
     getTopics()
       .then((response) => {
-        setTopics(response.data.topics); 
+        setTopics(response.data.topics);
+        setIsLoading(false);
       })
-    }, []);
+      .catch((err) => {
+        setError(err.message);
+        setIsLoading(false);
+      });
+  }, []);
 
-    return (
-      <nav className="topics-navigation">
-        <ul>
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>Error: {error}</p>;
+  }
+
+  return (
+    <nav className="topics-navigation">
+      <ul>
         <li>
           <Link to="/">All</Link>
         </li>
-            {topics.map((topic) => (
+        {topics.map((topic) => (
           <li key={topic.slug}>
             <Link to={`/topics/${topic.slug}`}>{topic.slug}</Link>
           </li>
-          ))}
-        </ul>
-      </nav>
-    );
-  }
-  
-  export default NavigationBar;
+        ))}
+      </ul>
+    </nav>
+  );
+};
+
+export default NavigationBar;

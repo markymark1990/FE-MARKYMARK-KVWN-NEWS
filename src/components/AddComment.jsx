@@ -10,11 +10,13 @@ const AddComment = ({onCommentAdded}) => {
     const { user } = useContext(UserContext)
     const [comment, setComment] = useState('')
     const [isSubmitting, setIsSubmitting] = useState(false)
+    const [error, setError] = useState(null);
 
 
 const handleSubmit = (event) => {
     event.preventDefault()
     setIsSubmitting(true) 
+    setError(null); 
 
     addComment(articleId, {
         body: comment,
@@ -25,8 +27,8 @@ const handleSubmit = (event) => {
         setIsSubmitting(false)
         onCommentAdded(response.data.comment)
     })
-    .catch((error) => {
-        console.error('Error adding comment:', error);
+    .catch(() => {
+        setError('Failed to add comment. Please try again.'); 
         setIsSubmitting(false);
     });
 }
@@ -49,6 +51,7 @@ const handleChange = (event) => {
                 {isSubmitting ? 'Submitting...' : 'Submit'}
                 </button>
             </form>
+            {error && <p className="error-message">{error}</p>} 
         </div>
     )
 }
