@@ -25,11 +25,11 @@ const DeleteComment = ({ commentId, onDelete, commentAuthor }) => {
   return (
     <div>
       {loggedInUser && loggedInUser.username === commentAuthor && (
-          <button onClick={handleDelete} disabled={isDeleting}>
+          <button onClick={handleDelete} disabled={isDeleting} className="delete-button">
           {isDeleting ? "Deleting..." : "Delete"}
         </button>
       )}
-         {deleteError && <p>{deleteError}</p>}
+         {deleteError && <p className="delete-error-message">{deleteError}</p>}
       </div>    
   );
 };

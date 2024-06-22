@@ -45,18 +45,18 @@ const ArticleInfo = () => {
   return (
     <div>
       {isLoading ? (
-        <p>Loading...</p>
+        <p className="loading-message">Loading...</p>
       ) : error ? (
-        <p>{error}</p>
+        <p className="error-message">{error}</p>
       ) : (
-        <div className="article-list">
-          <h2>{article.title}</h2>
+        <div className="article-container">
+          <h2 className="article-title">{article.title}</h2>
           <img
             src={article.article_img_url}
             alt={article.title}
             className="article-image"
           />
-          <p>
+          <p className="article-details">
             <strong>Author:</strong> {article.author}
           </p>
           <p>
@@ -66,13 +66,13 @@ const ArticleInfo = () => {
             <strong>Created at:</strong>{" "}
             {new Date(article.created_at).toLocaleDateString()}
           </p>
-          <p>{article.body}</p>
-          <p>
+          <p className="article-body">{article.body}</p>
+          <p className="article-votes">
             <strong>Votes:</strong>
             {article.votes}
           </p>
-          <button onClick={() => vote("up")}>Vote Up</button>
-          <button onClick={() => vote("down")}>Vote Down</button>
+          <button onClick={() => vote("up")} className="vote-button vote-button-up">Vote Up</button>
+          <button onClick={() => vote("down")} className="vote-button vote-button-down">Vote Down</button>
           <CommentsByArticle />
         </div>
       )}

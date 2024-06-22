@@ -39,15 +39,16 @@ const handleChange = (event) => {
 
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
+        <div className="add-comment-container">
+            <form onSubmit={handleSubmit} className="add-comment-form">
                 <textarea 
                 value={comment}
                 onChange={handleChange}
                 placeholder="Add a comment..."
                 required
+                className="comment-textarea"
                 ></textarea>
-                <button type="submit" disabled={isSubmitting}>
+                <button type="submit" disabled={isSubmitting} className="submit-button">
                 {isSubmitting ? 'Submitting...' : 'Submit'}
                 </button>
             </form>
