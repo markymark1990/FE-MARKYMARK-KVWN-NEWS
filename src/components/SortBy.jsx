@@ -7,7 +7,7 @@ const SortBy = ({ sortBy, setSortBy }) => {
 
   return (
     <div>
-      <label>Sort By:</label>
+      <label className="sort-by-title">Sort By:</label>
       <select id="sort-by" value={sortBy} onChange={handleSortChange}>
         <option value="created_at">Date</option>
         <option value="comment_count">Comment Count</option>

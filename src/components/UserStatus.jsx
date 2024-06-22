@@ -9,7 +9,7 @@ const UserStatus = () => {
     <div className="userstatus-container">
     {user ? (
         <div>
-        <p>Logged in as: {user.name}</p>
+        <p className='user-status-text'>Logged in as: {user.name}</p>
         <LogoutButton />
         </div>
       ) : (

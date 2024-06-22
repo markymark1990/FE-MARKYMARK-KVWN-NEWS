@@ -326,6 +326,14 @@ body {
   border-color: #1d439a; 
 }
 
+.sort-by-title {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+
 
 /* Media Queries */
 
@@ -510,11 +518,11 @@ body {
 
   .sub-heading {
     font-size: 20px;
-    padding: 0.5rem;
+    padding: 0.3rem;
   }
 
   .list-text-class {
-    font-size: 0.6rem;
+    font-size: 0.4rem;
   }
 
   .ron {
@@ -545,26 +553,73 @@ body {
     width: 80%;
   }
 
+  .topics-navigation {
+    background-color: #f8f9fa;
+    padding: 0px;
+  }
+  
   .topics-navigation ul {
-    flex-direction: column; 
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row; 
     align-items: center;
   }
-
+  
   .topics-navigation li {
     margin: 5px 0; 
   }
-
+  
   .topics-navigation a {
-    font-size: 0.7rem; 
+    text-decoration: none;
+    color: rgb(29, 67, 154);
+    font-weight: bold;
+    transition: color 0.3s;
+    font-size: 0.5rem;
   }
 
   .sort-controls {
     width: 100px;
     flex-wrap: wrap;
+    
   }
 
   .sort-controls select {
-    font-size: 0.4rem;
+    font-size: 0.3rem;
+    padding: 0.2rem; 
+    margin-right: 3px;
+    /* flex-direction: column; */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 60px; 
+    height: 14px;
+    background-size: 10px 10px;
   }
 
+  .sort-by-title {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    transition: color 0.3s;
+    font-size: 0.4rem
+  }
+
+  .logout-button {
+    width: 20%;
+    padding: 0.2rem;
+    background-color: #898989;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.5rem;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    margin-top: 1rem;
+  }
+  .user-status-text{
+    font-size: 0.5rem;
+  }
 }

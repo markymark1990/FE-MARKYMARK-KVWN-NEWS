@@ -7,10 +7,10 @@ const OrderBy = ({ orderBy, setOrderBy }) => {
 
   return (
     <div>
-      <label>Order By:</label>
+      <label className="sort-by-title">Order By:</label>
       <select value={orderBy} onChange={handleOrderChange}>
-        <option value="desc">Descending</option>
-        <option value="asc">Ascending</option>
+        <option value="desc" className="sort-controls select">Descending</option>
+        <option value="asc" className="sort-controls select">Ascending</option>
       </select>
     </div>
   );
