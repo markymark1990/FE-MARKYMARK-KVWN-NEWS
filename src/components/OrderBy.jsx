@@ -9,8 +9,8 @@ const OrderBy = ({ orderBy, setOrderBy }) => {
     <div>
       <label className="sort-by-title">Order By:</label>
       <select value={orderBy} onChange={handleOrderChange}>
-        <option value="desc" className="sort-controls select">Descending</option>
-        <option value="asc" className="sort-controls select">Ascending</option>
+        <option value="desc" >Descending</option>
+        <option value="asc" >Ascending</option>
       </select>
     </div>
   );
